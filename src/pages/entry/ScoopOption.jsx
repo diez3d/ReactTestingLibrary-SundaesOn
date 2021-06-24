@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-const ScoopOption = ({imagePath, name, updateItemCount}) =>{
+export default function ScoopOptions({ name, imagePath, updateItemCount }) {
   const [isValid, setIsValid] = useState(true);
   const handleChange = (event) => {
     const currentValue = event.target.value;
@@ -21,6 +21,7 @@ const ScoopOption = ({imagePath, name, updateItemCount}) =>{
     // only update context if the value is valid
     if (valueIsValid) updateItemCount(name, currentValue);
   };
+
   return (
     <Col xs={12} sm={6} md={4} lg={3} style={{ textAlign: 'center' }}>
       <img
@@ -47,5 +48,4 @@ const ScoopOption = ({imagePath, name, updateItemCount}) =>{
       </Form.Group>
     </Col>
   );
-}; 
-export default ScoopOption;
+}

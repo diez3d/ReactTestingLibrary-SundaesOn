@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils/testing-library-utils';
 import userEvent from '@testing-library/user-event';
 import Options from '../Options';
-/* import OrderEntry from '../OrderEntry'; */
+import OrderEntry from '../OrderEntry';
 
 test('update scoop subtotal when scoops change', async () => {
   render(<Options optionType="scoops" />);
@@ -27,7 +27,7 @@ test('update scoop subtotal when scoops change', async () => {
   expect(scoopsSubtotal).toHaveTextContent('6.00');
 });
 
-/* test('update toppings subtotal when toppings change', async () => {
+test('update toppings subtotal when toppings change', async () => {
   // render parent component
   render(<Options optionType="toppings" />);
 
@@ -50,9 +50,9 @@ test('update scoop subtotal when scoops change', async () => {
   // remove hot fudge and check subtotal
   userEvent.click(hotFudgeCheckbox);
   expect(toppingsTotal).toHaveTextContent('1.50');
-}); */
+});
 
-/* describe('grand total', () => {
+describe('grand total', () => {
   test('grand total updates properly if scoop is added first', async () => {
     // Test that the total starts out at $0.00
     render(<OrderEntry />);
@@ -124,4 +124,4 @@ test('update scoop subtotal when scoops change', async () => {
     userEvent.click(cherriesCheckbox);
     expect(grandTotal).toHaveTextContent('2.00');
   });
-}); */
+});
