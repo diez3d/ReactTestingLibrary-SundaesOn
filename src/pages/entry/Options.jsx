@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import ScoopOption from './ScoopOption';
 import ToppingOption from './ToppingOption';
-import AlertBanner from '../pages/common/AlertBanner';
+import AlertBanner from '../common/AlertBanner';
 
 const Options = ({ optionType }) =>{
     const [items, setItems] = useState([]);
