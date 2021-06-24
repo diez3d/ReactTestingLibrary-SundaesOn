@@ -1,11 +1,10 @@
 import {
     render,
     screen,
-    fireEvent,
-    /* waitForElementToBeRemoved, */
+    waitForElementToBeRemoved,
   } from '@testing-library/react';
   import SummaryForm from '../SummaryForm';
-  /* import userEvent from '@testing-library/user-event'; */
+  import userEvent from '@testing-library/user-event';
   
   test('Initial conditions', () => {
     render(<SummaryForm />);
@@ -25,14 +24,14 @@ import {
     });
     const confirmButton = screen.getByRole('button', { name: /confirm order/i });
   
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
     expect(confirmButton).toBeEnabled();
   
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
     expect(confirmButton).toBeDisabled();
   });
   
-  /* test('popover responds to hover', async () => {
+  test('popover responds to hover', async () => {
     render(<SummaryForm />);
   
     // popover starts out hidden
@@ -44,7 +43,6 @@ import {
     // popover appears upon mouseover of checkbox label
     const termsAndConditions = screen.getByText(/terms and conditions/i);
     userEvent.hover(termsAndConditions);
-  
     const popover = screen.getByText(/no ice cream will actually be delivered/i);
     expect(popover).toBeInTheDocument();
   
@@ -53,4 +51,4 @@ import {
     await waitForElementToBeRemoved(() =>
       screen.queryByText(/no ice cream will actually be delivered/i)
     );
-  }); */
+  });
