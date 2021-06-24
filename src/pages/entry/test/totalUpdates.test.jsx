@@ -4,7 +4,7 @@ import Options from '../Options';
 /* import OrderEntry from '../OrderEntry'; */
 
 test('update scoop subtotal when scoops change', async () => {
-  /* render(<Options optionType="scoops" />);
+  render(<Options optionType="scoops" />);
 
   // make sure total starts out $0.00
   const scoopsSubtotal = screen.getByText('Scoops total: $', { exact: false });
@@ -24,7 +24,7 @@ test('update scoop subtotal when scoops change', async () => {
   });
   userEvent.clear(chocolateInput);
   userEvent.type(chocolateInput, '2');
-  expect(scoopsSubtotal).toHaveTextContent('6.00'); */
+  expect(scoopsSubtotal).toHaveTextContent('6.00');
 });
 
 /* test('update toppings subtotal when toppings change', async () => {
